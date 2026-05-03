@@ -4,9 +4,9 @@
 
 This repository powers an automated daily career roadmap newsletter.
 
-The goal is to generate highly informative daily certification-study newsletters based on the scheduled roadmap topic for the current date. Each newsletter should help Shaurya prepare for cloud, DevOps, cybersecurity, GRC, SOC, AppSec, AI-security, and related technical roles.
+The goal is to generate highly informative daily certification-study newsletters based on the scheduled roadmap topic for the current date. Each newsletter should help nrup prepare for cloud, DevOps, cybersecurity, GRC, SOC, AppSec, AI-security, and related technical roles.
 
-The newsletter must help Shaurya:
+The newsletter must help nrup:
 
 1. Ace the relevant certification exams.
 2. Become job-ready for cloud, DevOps, cybersecurity, GRC, SOC, AppSec, AI-security, and related technical roles.
@@ -19,6 +19,8 @@ Use this repository structure:
 ```text
 career-certs-daily-newsletters/
   CLAUDE.md
+
+  error_logs/
 
   context/
     career_roadmap_context/
@@ -41,22 +43,22 @@ The end goal is to help me:
 1. Ace the relevant certification exams.
 2. Become job-ready for cloud, DevOps, cybersecurity, GRC, SOC, AppSec, AI-security, and related technical roles.
 3. Build interview-ready knowledge, not just memorize definitions.
-4. Understand how each topic appears in real companies, cloud environments, banking/finance teams, SOC teams, DevOps teams, security programs, and portfolio projects.
+4. Understand how each topic appears in real companies, cloud environments, banking/finance teams, SOC teams, DevOps teams, security programs, and portfolio projects, everything latest and how will it be used in the coming future.
 
 
-Only generate content for the roadmap topic scheduled for that date. Do not include future phases or unrelated categories unless the scheduled topic belongs to that phase. If multiple topics are scheduled for the same date, combine them into one focused newsletter for that date. If there is no exact date match, use the nearest upcoming topic and clearly state that it is the nearest upcoming topic.
+Only generate content for the roadmap topic scheduled for that date. You can explain the concepts that are related to the roadmap topic in depth a bit covering from fundamentals to advance concepts and how it is used in the real world. Do not include future phases or unrelated categories unless the scheduled topic belongs to that phase. If multiple topics are scheduled for the same date, combine them into one focused newsletter for that date. If there is no exact date match, use the nearest upcoming topic and clearly state that it is the nearest upcoming topic.
 
 ## Depth and Upskilling Rules
 
-Each newsletter must be written to genuinely improve Shaurya’s technical skill, not just summarize the roadmap item.
+Each newsletter must be written to genuinely improve nrup's technical skill, not just summarize the roadmap item.
 
-For every scheduled topic, the newsletter must include enough depth to help Shaurya become stronger in certification exams, technical interviews, real workplace reasoning, and portfolio project explanation.
+For every scheduled topic, the newsletter must include enough depth to help nrup become stronger in certification exams, technical interviews, real workplace reasoning, and portfolio project explanation.
 
 The newsletter should teach the topic at three levels:
 
-1. Exam level — what the certification expects Shaurya to know.
+1. Exam level — what the certification expects nrup to know.
 2. Real-world level — how the concept is used in actual cloud, security, DevOps, SOC, GRC, AppSec, AI-security, or banking environments.
-3. Interview level — how Shaurya should explain the concept clearly, confidently, and with examples.
+3. Interview level — how nrup should explain the concept clearly, confidently, and with examples.
 
 For every technical topic, include:
 
@@ -81,12 +83,13 @@ Use examples wherever useful, especially examples involving:
 - Monitoring and incident response decisions.
 - Banking, consulting, MSSP, or enterprise technology environments.
 - Portfolio project explanations.
+- How and which big companies use today's daily topic in real world and scale
 
 The newsletter must not be motivational-only. It must contain dense, useful technical learning.
 
 Avoid generic advice such as “study hard,” “review documentation,” or “understand the basics” unless it is paired with specific action.
 
-When explaining a concept, make Shaurya better at answering:
+When explaining a concept, make nrup better at answering:
 
 - What is it?
 - Why does it exist?
@@ -100,7 +103,7 @@ When explaining a concept, make Shaurya better at answering:
 
 Each newsletter should include at least one “senior engineer insight” or “real-world judgment” point that goes beyond basic certification memorization.
 
-The newsletter should make Shaurya more fluent in professional technical language while still being clear and understandable.
+The newsletter should make nrup more fluent in professional technical language while still being clear and understandable.
 
 The goal is not just to pass exams. The goal is to build job-ready technical judgment.
 
