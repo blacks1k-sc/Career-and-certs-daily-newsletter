@@ -28,7 +28,11 @@ career-certs-daily-newsletters/
 
 ## Newsletter Generation 
 
-Generate today’s career roadmap newsletter using the Career Roadmap Newsletter project knowledge, the uploaded roadmap PDF
+Generate today’s career roadmap newsletter using the roadmap files in this repository.
+
+Use `context/career_roadmap_context/career_roadmap_v3_sprint.md` as the primary source of truth for all newsletter generation.
+
+Use `context/career_roadmap_context/career_roadmap_v3_sprint.pdf` only as backup/reference if the Markdown file is unclear or missing detail.
 Use the uploaded roadmap as the source of truth for all newsletter generation. The goal is to generate highly informative daily certification-study newsletters based only on the scheduled roadmap topic for the requested date.
 
 Since May 1, May 2, and May 3 were already tested manually, begin automated daily generation from May 4 onward. If today’s date is May 4 or later, use today’s scheduled topic. If there is no exact date match, use the nearest upcoming topic and clearly state that it is the nearest upcoming topic.
@@ -157,3 +161,54 @@ Email rules:
 - If direct sending is unavailable, clearly state that direct sending is unavailable and create a properly formatted Gmail draft instead.
 - Use the subject format: Daily Career Roadmap Newsletter - [Date] - [Topic]
 - Do not use emojis in the subject line.      
+
+## Error Logging Rules
+
+If the newsletter workflow fails at any step, create a Markdown error log file in:
+
+`error_logs/`
+
+Use this filename format:
+
+`error_logs/YYYY-MM-DD_newsletter_error.md`
+
+Do not create an error log when the workflow succeeds.
+
+The error log must include:
+
+1. Date and time of the failed run.
+2. Whether `CLAUDE.md` was found and read.
+3. Whether `context/career_roadmap_context/career_roadmap_v3_sprint.md` was found and read.
+4. Whether `context/career_roadmap_context/career_roadmap_v3_sprint.pdf` was checked as backup/reference.
+5. Whether today’s roadmap topic was successfully extracted.
+6. The roadmap topic that was extracted, if any.
+7. Whether the newsletter was generated.
+8. Whether Gmail sending was attempted.
+9. Whether Gmail sending succeeded or failed.
+10. Whether Gmail draft creation was attempted.
+11. Whether Gmail draft creation succeeded or failed.
+12. Exact failure point.
+13. Likely cause of the failure.
+14. Steps taken before failure.
+15. Recommended fix before the next run.
+16. If the newsletter was generated but Gmail sending and draft creation failed, include the full newsletter body in the error log.
+
+If Gmail fails completely, do not pretend the newsletter was sent. Output the full newsletter in the routine result and create a dated Markdown error log in `error_logs/`.
+
+If the workflow fails before newsletter generation, clearly report the failure in the routine result and create a dated Markdown error log in `error_logs/` explaining what went wrong.
+
+If creating or committing the error log file in GitHub is unavailable, include the complete error log content in the routine result so it can be copied into the repo manually.
+
+## Standard Claude Routine Prompt
+
+Generate today’s career roadmap newsletter by following `CLAUDE.md`. Check today’s calendar date, extract today’s scheduled roadmap topic from `context/career_roadmap_context/career_roadmap_v3_sprint.md`, use `context/career_roadmap_context/career_roadmap_v3_sprint.pdf` only as backup/reference, and send the completed newsletter directly by Gmail to `nruppatel439@gmail.com`.
+
+If direct Gmail sending is unavailable but Gmail draft creation is available, create a properly formatted Gmail draft instead.
+
+If Gmail fails completely, do not pretend the newsletter was sent. Output the full newsletter in the routine result and create a dated Markdown error log in `error_logs/`.
+
+If the workflow fails before newsletter generation, clearly report the failure in the routine result and create a dated Markdown error log in `error_logs/` explaining what went wrong.
+
+If creating or committing the error log file in GitHub is unavailable, include the complete error log content in the routine result so it can be copied into the repo manually.
+
+Always use the current files from the `context` folder for roadmap generation. Do not rely on cached or old information. Re-read the context files when needed to ensure accuracy.
